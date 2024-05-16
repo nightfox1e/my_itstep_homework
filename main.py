@@ -51,6 +51,10 @@ def menu():
     animate_text(text)
     wait(0.8)
     print('\n')
+    text = "      [2] *NEW* ПРОГРАМА ДО ЗАВДАННЯ 3"
+    animate_text(text)
+    wait(0.8)
+    print('\n')
     choose = input('  Ваш вибір: ')
 
     wait(0.3)
@@ -162,6 +166,52 @@ def menu():
                 wait(1)
                 menu()
         program_2()
+    elif choose == '2':
+        music.play()
+        def program_3():
+            wait(3)
+            animate_text2("Напишіть два числа, ")
+            wait(0.5)
+            animate_text2("результатом яких буде відсоток від першого числа.")
+            wait(0.4)
+            print('\n')
+            int1 = int(input('  Число: '))
+            int2 = int(input('  %: '))
+            result1 = f'{int(int1 / 100 * int2)} %'
+            wait(0.45)
+            clear()
+            animate_text2("Прекрасно.")
+            wait(2)
+            clear()
+            wait(0.45)
+            animate_text2("Ось відсоток від даного числа:")
+            print('\n')
+            wait(1)
+            print(Figlet(font='slant').renderText(result1))
+            gate_close.play()
+            wait(2)
+            print('\n')
+            animate_text2("Бажаєте почати знову?")
+            wait(0.4)
+            ans = input(' [y/n] ')
+            if ans == 'y':
+                wait(0.4)
+                clear()
+                gate_close.play()
+                program_3()
+            elif ans == 'Y':
+                wait(0.4)
+                clear()
+                gate_close.play()
+                program_3()
+
+            else:
+                clear()
+                music.stop()
+                gate_close.play()
+                wait(1)
+                menu()
+        program_3()
     else:
         clear()
         music.stop()
